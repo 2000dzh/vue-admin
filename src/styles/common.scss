@@ -1,0 +1,72 @@
+// 公用样式代码
+// 重置样式
+.container {
+	position: relative;
+	width: 1240px;
+	margin: 0 auto;
+}
+
+// 单行文本溢出
+.ellipsis {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.ellipsis-2 {
+	display: -webkit-box;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	word-break: break-all;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 2;
+}
+.fl {
+	float: left;
+}
+.fr {
+	float: right;
+}
+.clearfix::after {
+	display: block;
+	height: 0;
+	clear: both;
+	line-height: 0;
+	visibility: hidden;
+	content: ".";
+}
+
+/* 常用 flex */
+.flx-center {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+// 离开时候淡出的动画
+.fade {
+	&-leave {
+		&-active {
+			position: absolute;
+			z-index: 1;
+			width: 100%;
+			transition: opacity 0.5s 0.2s;
+		}
+		&-to {
+			opacity: 0;
+		}
+	}
+}
+.fade-right-enter-to,
+.fade-right-leave-from {
+	opacity: 1;
+	transform: none;
+}
+.fade-right-enter-active,
+.fade-right-leave-active {
+	transition: all 0.5s;
+}
+.fade-right-enter-from,
+.fade-right-leave-to {
+	opacity: 0;
+	transform: translate3d(20px, 0, 0);
+}
